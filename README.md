@@ -1,1 +1,1 @@
-# Sistema-gesti-n-de-gastos
+# Sistema de gestión de gastos para una empresa constructora
