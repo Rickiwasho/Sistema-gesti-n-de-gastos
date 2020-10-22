@@ -1,9 +1,9 @@
-# Sistema de gestión de gastos para una empresa constructora
+# **Sistema de gestión de gastos para una empresa constructora*  
 
-integrantes: Diego Sandoval y Ricardo Coronado 
+#**integrantes:** Diego Sandoval y Ricardo Coronado 
 
 ## 1. Especificación de requisitos de usuario:[Ver documento](docs/Requisitos-de-usuario.pdf)
-## 2. Especificacion de requisitos de software:[Ver documento](docs/Requisitos-de-software.pdf)
+## 2. Especificacion de requisitos de software:[Ver documento](docs/Requisitos de software.pdf)
 ## 3. Estimación de esfuerzo usando COCOMO II:[Ver documento](docs/COCOMOII.pdf)
 ## 4. Casos de uso:[Ver documento](docs/Casos-de-uso.pdf)
 ## 5. Historias de usuario:[Ver documento](docs/Historias-de-usuario.pdf)
