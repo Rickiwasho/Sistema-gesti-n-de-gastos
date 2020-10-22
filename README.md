@@ -1,6 +1,6 @@
 # **Sistema de gestión de gastos para una empresa constructora**    
 
-#**integrantes:** Diego Sandoval y Ricardo Coronado 
+Integrantes: Diego Sandoval y Ricardo Coronado 
 
 ## 1. Especificación de requisitos de usuario:[Ver documento](docs/Requisitos-de-usuario.pdf)
 ## 2. Especificacion de requisitos de software:[Ver documento](docs/Requisitos de software.pdf)
