@@ -5,6 +5,6 @@ class Usuario(models.Model):
 	apellido = models.charField(max_length=100)
 	email = models.charField(max_length=100)
 	tel = models.charField(max_length=100)
-	admin = models.BooleanField()
+	admin = models.BooleanField(default=false)
 
 
