@@ -10,5 +10,5 @@ Integrantes: Diego Sandoval, Sebastián Lara y Ricardo Coronado
 ## 6. Diagrama de clases:[Ver documento]
 ## 7. Diagrama de base de datos:[Ver documento]
 ## 8. Diagrama de despliege:[Ver documento]
-## 9. Diagrama de secuencia:[Ver documento](sistema-gestion-gastos/docs/diagramas/secuencia/)
+## 9. Diagrama de secuencia:[Ver documento](/docs/diagramas/secuencia/)
 ## 10. Contratos del sistema:[Ver documento](docs/Historias-de-usuario.pdf)
