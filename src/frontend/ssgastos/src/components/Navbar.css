@@ -21,17 +21,17 @@
   .navbar-logo {
     color: #fff;
     justify-self: start;
-    margin-left: 20px;
+    margin-left: 8px;
     cursor: pointer;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
   }
   
   .fa-drafting-compass{
     margin-left: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   
   .nav-menu {
@@ -115,7 +115,7 @@
   
     .navbar-logo {
       position: absolute;
-      top: 0;
+      top: 5px;
       left: 0;
       transform: translate(25%, 50%);
     }
