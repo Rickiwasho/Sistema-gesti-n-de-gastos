@@ -3,14 +3,13 @@ import '../../App.css';
 import ImageSlider from '../ImageSlider';
 import Footer from '../Footer';
 
-function Nosotros () {
+function Home() {
     return (
         <>
             <ImageSlider />
-            
             <Footer/>
         </>
     );
 }
 
-export default Nosotros;
+export default Home;
