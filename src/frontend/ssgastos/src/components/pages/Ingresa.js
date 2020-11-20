@@ -16,10 +16,11 @@ function Ingresa () {
               <input type='password' name='password' placeholder='Contraseña'/>
             </form>
           </div>
-          <Button buttonStyle='btn--outline' buttonSize='btn--primary'>Iniciar sesión</Button>
+          <Button className='btn-login' buttonStyle='btn--outline' buttonSize='btn--large'>Iniciar sesión</Button>
+
           <div className='help-links'>
-            <Link to='/'>¿Olvidaste tu contraseña?</Link>
-            <Link to='/'> Regístrate</Link>
+            <a to='/'>¿Olvidaste tu contraseña?</a>
+            <a to='/'> Regístrate</a>
           </div>
 
         </section>

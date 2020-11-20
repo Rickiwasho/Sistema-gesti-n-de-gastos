@@ -11,8 +11,10 @@
 .signin-section {
     display: block;
     margin-top: 2px;
-    align-items: vertical;
-    
+    /*
+    align-items: center;
+    justify-content: center;
+    */
 }
 .signin-section > h1 {
     color: #fff;
@@ -30,8 +32,16 @@ form {
     grid-gap: 10px;
 }
 .help-links {
+    color: #fff;
     display: flex;
-    margin-top: 10px;
-    display:grid;
+    margin-top: 2rem;
+    display: grid;
     grid-gap: 10px;
+    color: #e9e9e9;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.btn-login { 
+    
 }
