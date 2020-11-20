@@ -12,18 +12,18 @@ function Footer() {
                 <div className='footer-link-wrapper'>
                     <div class='footer-link-items'>
                         <h2>Información</h2>
-                        <Link to='/sign-up'>How it works</Link>
-                        <Link to='/'>Testimonials</Link>
-                        <Link to='/'>Careers</Link>
-                        <Link to='/'>Investors</Link>
-                        <Link to='/'>Terms of Service</Link>
+                        <Link to='/'>Equipo humano</Link>
+                        <Link to='/'>Misión, Visión y Valores</Link>
+                        <Link to='/'>Ética y diversidad</Link>
+                        <Link to='/'>Proveedores</Link>
+                        <Link to='/'>Comunidad y Medioambiente</Link>
                     </div>
                     <div class='footer-link-items'>
                         <h2>Contáctanos</h2>
                         <Link to='/'>Contacto</Link>
-                        <Link to='/'>Support</Link>
-                        <Link to='/'>Destinations</Link>
-                        <Link to='/'>Sponsorships</Link>
+                        <Link to='/'>Soporte</Link>
+                        <Link to='/'>Casa matriz</Link>
+                        <Link to='/'>Horario de Atención</Link>
                     </div>
                 </div>
                 <div className='footer-link-wrapper'>
