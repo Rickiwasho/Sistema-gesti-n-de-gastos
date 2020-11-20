@@ -11,15 +11,19 @@ function Ingresa () {
         <section className='signin-section'>
           <h1> INICIAR SESIÓN</h1>
           <div className='input-areas'>
-            <form>
+            <form className='campos'>
               <input type='email' name='email' placeholder='Correo electrónico' className='email-input' />
               <input type='password' name='password' placeholder='Contraseña'/>
             </form>
-              <Button buttonStyle='btn--outline' buttonSize='btn--primary'>Iniciar sesión</Button>
           </div>
-          <Link to='/' className='help-links'>¿Olvidaste tu contraseña?</Link>
+          <Button buttonStyle='btn--outline' buttonSize='btn--primary'>Iniciar sesión</Button>
+          <div className='help-links'>
+            <Link to='/'>¿Olvidaste tu contraseña?</Link>
+            <Link to='/'> Regístrate</Link>
+          </div>
 
         </section>
+  
     </div>
   );
 }
