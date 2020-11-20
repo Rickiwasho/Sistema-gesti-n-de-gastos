@@ -7,28 +7,11 @@ import { Link } from 'react-router-dom';
 function Footer() {
     return (
         <div className='footer-container'>
-            <section className='footer-subsciption'>
 
-
-                <p className='footer-subscription-heading'>
-                    Suscríbete a nuestro newsletter para recibir nuestras noticias
-                </p>
-                <p className='footer-subscription-text'>
-                    Puedes desuscribirte cuando quieras!
-                </p>
-
-
-                <div className='input-areas'>
-                    <form>
-                        <input type='email'name='email' placeHolder='Tu email' className='footer-input' />
-                        <Button buttonStyle='btn--outline'>Suscríbete</Button>
-                    </form>
-                </div>
-            </section>
             <div class='footer-links'>
                 <div className='footer-link-wrapper'>
                     <div class='footer-link-items'>
-                        <h2>Sobre nosotros</h2>
+                        <h2>Información</h2>
                         <Link to='/sign-up'>How it works</Link>
                         <Link to='/'>Testimonials</Link>
                         <Link to='/'>Careers</Link>
@@ -36,8 +19,8 @@ function Footer() {
                         <Link to='/'>Terms of Service</Link>
                     </div>
                     <div class='footer-link-items'>
-                        <h2>Contact Us</h2>
-                        <Link to='/'>Contact</Link>
+                        <h2>Contáctanos</h2>
+                        <Link to='/'>Contacto</Link>
                         <Link to='/'>Support</Link>
                         <Link to='/'>Destinations</Link>
                         <Link to='/'>Sponsorships</Link>
@@ -46,7 +29,7 @@ function Footer() {
                 <div className='footer-link-wrapper'>
           
                     <div class='footer-link-items'>
-                        <h2>Social Media</h2>
+                        <h2>RRSS</h2>
                         <Link to='/'>Instagram</Link>
                         <Link to='/'>Facebook</Link>
                         <Link to='/'>Youtube</Link>
@@ -58,7 +41,7 @@ function Footer() {
                 <div className='social-media-wrap'>
                     <div className='footer-logo'>
                         <Link  to='/' className='social-logo'>
-                            Soluciones Integrales <i class="fas fa-drafting-compass"/>
+                            <i class="fas fa-drafting-compass"/>
                         </Link>
                     </div>
                     <small className='website-rights'> Copyright © 2020 solucionesintegrales.cl - Todos los derechos reservados</small>
