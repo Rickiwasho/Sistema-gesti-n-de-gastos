@@ -3,7 +3,8 @@ import React from 'react';
 import {Button} from '../Button';
 import { Link } from 'react-router-dom';
 import '../../App.css';
-import './Ingresa.css'
+import './Ingresa.css';
+import './system/Inicio';
 
 function Ingresa () {
   return (
@@ -16,7 +17,8 @@ function Ingresa () {
               <input type='password' name='password' placeholder='Contraseña'/>
             </form>
           </div>
-          <Button to='pages/inicio' className='btn-login' buttonStyle='btn--outline' buttonSize='btn--large'>Iniciar sesión</Button>
+
+          <Button className='btn-login' buttonStyle='btn--outline' buttonSize='btn--large'>Iniciar sesión</Button>
 
           <div className='help-links'>
             <a to='/newpw'>¿Olvidaste tu contraseña?</a>

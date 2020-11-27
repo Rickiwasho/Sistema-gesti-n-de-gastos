@@ -26,11 +26,18 @@ function Panel() {
         <>
             <nav className = 'tabs'>
                 <div className='tabs-container'>
-                    <Link to="/" className="logo" onClick={closeMobileMenu}>
-                        <i className={click ? 'fas fa-times': 'fas fa-bars'} />
+                    <Link to="/" className="tab-logo" onClick={closeMobileMenu}>
+                        <i class="fas fa-drafting-compass"/>
+
                     </Link>
+                    <div className='menu-icon'onClick={handleClick}>
+                        <i className={click ? 'fas fa-times': 'fas fa-bars'} />
+
+                    </div>
                 </div>
             </nav>
         </>
     );
 }
+
+export default Panel;

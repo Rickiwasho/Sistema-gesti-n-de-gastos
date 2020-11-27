@@ -8,6 +8,7 @@ import Obras from './components/pages/Obras';
 import Ingresa from './components/pages/Ingresa';
 import Servicio from './components/pages/Servicio';
 import Contacto from './components/pages/Contacto';
+import Inicio from './components/pages/system/Inicio';
 
 
 function App() {
@@ -22,8 +23,8 @@ function App() {
         <Route path='/servicio' component={Servicio} />
         <Route path='/contacto' component={Contacto} />
         <Route path='/ingresa' component={Ingresa} />
-
-
+        <Route path='/inicio' component={Inicio} />
+        
       </Switch>
 
     </Router>
