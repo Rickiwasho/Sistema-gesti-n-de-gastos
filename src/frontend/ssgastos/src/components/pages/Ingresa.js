@@ -20,7 +20,8 @@ function Ingresa () {
         auth
             .signInWithEmailAndPassword(email, password)
             .then((auth) => {
-                history.push('/')
+                
+                history.push('/Inicio')
             })
             .catch(error => alert(error.message))
     }
