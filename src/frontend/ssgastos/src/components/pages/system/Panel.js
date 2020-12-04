@@ -25,43 +25,46 @@ function Panel() {
 
     return (
         <>
-            <nav className = 'tabs'>
-                <div className='tabs-container'>
-                    <Link to="/inicio" className="tab-logo" onClick={closeMobileMenu}>
+           <nav className="navbar">
+                <div className="navbar-container">
+                    <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+                        Soluciones integrales
                         <i class="fas fa-drafting-compass"/>
                     </Link>
-                    <ul >
-                        <li className='elem-tab'>    
-                            <Link to='/'>
-                                Obras
+                    <div className='menu-icon' onClick={handleClick}>
+                        <i className={click ? 'fas fa-times': 'fas fa-bars'} />
+                    </div>
+                    <ul className={click ? 'nav-menu active': 'nav-menu'}>
+                        <li className='nav-item'>
+                            <Link to='/nosotros' className='nav-links' onClick={closeMobileMenu}>
+                                OBRAS
                             </Link>
-
                         </li>
-                        <li className='elem-tab'>    
-                            <Link to='/'>
-                                Obra
+                        <li className='nav-item'>
+                            <Link to='/obras' className='nav-links' onClick={closeMobileMenu}>
+                                COTIZACIONES
                             </Link>
-
                         </li>
-                        <li className='elem-tab'>    
-                            <Link to='/'>
-                                Obra
+                        <li className='nav-item'>
+                            <Link to='/contacto' className='nav-links' onClick={closeMobileMenu}>
+                                HISTÓRICO
                             </Link>
-
                         </li>
-                        <li className='elem-tab'>    
-                            <Link to='/'>
-                                Cerrar sesión
+                        <li className='nav-item'>
+                            <Link to='/servicio' className='nav-links' onClick={closeMobileMenu}>
+                                PANEL DE USUARIOS
                             </Link>
-
                         </li>
-                        
-                        
 
+                        <li>
+                            <Link to='/Ingresa' className='nav-links-mobile' onClick={closeMobileMenu}>
+                                CERRAR SESIÓN
+                            </Link>
+                        </li>
                     </ul>
-
+                    {button && <Button buttonStyle='btn--outline' to='/Ingresa'>CERRAR SESIÓN</Button>}
                 </div>
-            </nav>
+            </nav> 
         </>
     );
 }
