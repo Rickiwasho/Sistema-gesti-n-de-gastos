@@ -11,4 +11,5 @@ Integrantes: Diego Sandoval, Sebastián Lara y Ricardo Coronado
 ## 7. Diagrama de base de datos:[Ver documento]
 ## 8. Diagrama de despliege:[Ver documento]
 ## 9. Diagrama de secuencia:[Ver documento](/docs/diagramas/secuencia/)
-## 10. Contratos del sistema:[Ver documento](docs/Historias-de-usuario.pdf)
+## 10. Diagrama de colaboración: [Ver documento](/docs/diagramas/colaboracion/)
+## 11. Contratos del sistema:[Ver documento](docs/Historias-de-usuario.pdf)
