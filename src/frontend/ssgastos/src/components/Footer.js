@@ -25,16 +25,7 @@ function Footer() {
                         <Link to='/'>Horario de Atención</Link>
                     </div>
                 </div>
-                <div className='footer-link-wrapper'>
-          
-                    <div class='footer-link-items'>
-                        <h2>RRSS</h2>
-                        <Link to='/'>Instagram</Link>
-                        <Link to='/'>Facebook</Link>
-                        <Link to='/'>Youtube</Link>
-                        <Link to='/'>Twitter</Link>
-                    </div>
-                </div>
+                
             </div>
             <section className='social-media'>
                 <div className='social-media-wrap'>
