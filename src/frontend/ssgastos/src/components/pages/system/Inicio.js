@@ -1,6 +1,6 @@
 import React from 'react';
 import './Inicio.css';
-import './Panel'
+import  Panel from './Panel';
 
 
 
@@ -12,6 +12,8 @@ function Inicio() {
 
     return (
         <>
+            <h1>Hola</h1>
+            <Panel/>
            
         
 

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Button} from '../../Button';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import './Panel.css';
 
 function Panel() {
@@ -26,14 +27,39 @@ function Panel() {
         <>
             <nav className = 'tabs'>
                 <div className='tabs-container'>
-                    <Link to="/" className="tab-logo" onClick={closeMobileMenu}>
+                    <Link to="/inicio" className="tab-logo" onClick={closeMobileMenu}>
                         <i class="fas fa-drafting-compass"/>
-
                     </Link>
-                    <div className='menu-icon'onClick={handleClick}>
-                        <i className={click ? 'fas fa-times': 'fas fa-bars'} />
+                    <ul >
+                        <li className='elem-tab'>    
+                            <Link to='/'>
+                                Obras
+                            </Link>
 
-                    </div>
+                        </li>
+                        <li className='elem-tab'>    
+                            <Link to='/'>
+                                Obra
+                            </Link>
+
+                        </li>
+                        <li className='elem-tab'>    
+                            <Link to='/'>
+                                Obra
+                            </Link>
+
+                        </li>
+                        <li className='elem-tab'>    
+                            <Link to='/'>
+                                Cerrar sesión
+                            </Link>
+
+                        </li>
+                        
+                        
+
+                    </ul>
+
                 </div>
             </nav>
         </>

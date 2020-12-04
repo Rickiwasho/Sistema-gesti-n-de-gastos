@@ -8,10 +8,9 @@ import Obras from './components/pages/Obras';
 import Ingresa from './components/pages/Ingresa';
 import Servicio from './components/pages/Servicio';
 import Contacto from './components/pages/Contacto';
-import Inicio from './components/pages/system/Inicio';
 import {auth} from './components/firebase';
 import { useStateValue } from './components/StateProvider';
-
+import Inicio from './components/pages/system/Inicio';
 
 function App() {
 
@@ -43,17 +42,36 @@ function App() {
   return (
     <>
     <Router>
-      <Navbar />
-      <Switch>
-        <Route path='/' exact component={Home}/>
-        <Route path='/nosotros' component={Nosotros} />
-        <Route path='/obras' component={Obras} />
-        <Route path='/servicio' component={Servicio} />
-        <Route path='/contacto' component={Contacto} />
-        <Route path='/ingresa' component={Ingresa} />
-        <Route path='/inicio' component={Inicio} />
-        
-      </Switch>
+      <div className='app'>
+        <Switch>
+          <Route path='/inicio'>
+            <Inicio/>
+          </Route>
+          <Route path='/nosotros'>
+            <Navbar/>
+            <Nosotros/>
+          </Route>
+          <Route path='/Obras'>
+            <Navbar/>
+            <Obras/>
+          </Route>
+          <Route path='/Ingresa'>
+            <Ingresa/>
+          </Route>
+          <Route path='/Servicio'>
+            <Navbar/>
+            <Servicio/>
+          </Route>
+          <Route path='/Contacto'>
+            <Navbar/>
+            <Contacto/>
+          </Route>
+          <Route path='/'>
+            <Navbar/>
+            <Home/>
+          </Route>
+        </Switch>
+      </div>
 
     </Router>
     </>
