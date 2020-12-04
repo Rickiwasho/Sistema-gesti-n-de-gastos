@@ -2,6 +2,8 @@ import React from 'react';
 import './Tareas.css';
 
 function Tareas({title}) {
+    // Tareas es un ítem de mis obras, hasta el momento despliega
+    // un título y la opción de modificarla
     return (
         
 
@@ -12,9 +14,9 @@ function Tareas({title}) {
             <div className='tarea-info'>
                 <p>{title}</p>
             </div>
-            <button> Modificar</button>
-            <button> Add to Basket</button>
-            <button> Add to Basket</button>
+            <button> Modificar </button>
+            <button> Completar </button>
+            <button> Eliminar </button>
 
             
         </div>

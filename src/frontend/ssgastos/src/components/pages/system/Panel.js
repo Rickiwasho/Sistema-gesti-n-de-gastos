@@ -41,24 +41,27 @@ function Panel() {
                                 OBRAS
                             </Link>
                         </li>
+                        
                         <li className='nav-item'>
                             <Link to='/misobras' className='nav-links' onClick={closeMobileMenu}>
-                                COTIZACIONES
+                                ACTIVIDADES
+                            </Link>
+                        </li>
+                    
+                        <li className='nav-item'>
+                            <Link to='/misobras' className='nav-links' onClick={closeMobileMenu}>
+                                BALANCE
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/contacto' className='nav-links' onClick={closeMobileMenu}>
-                                HISTÓRICO
+                            <Link to='/misobras' className='nav-links' onClick={closeMobileMenu}>
+                                AJUSTES
                             </Link>
                         </li>
-                        <li className='nav-item'>
-                            <Link to='/servicio' className='nav-links' onClick={closeMobileMenu}>
-                                PANEL DE USUARIOS
-                            </Link>
-                        </li>
+                
 
                         <li>
-                            <Link to='/Ingresa' className='nav-links-mobile' onClick={closeMobileMenu}>
+                            <Link to='/' className='nav-links-mobile' onClick={closeMobileMenu}>
                                 CERRAR SESIÓN
                             </Link>
                         </li>

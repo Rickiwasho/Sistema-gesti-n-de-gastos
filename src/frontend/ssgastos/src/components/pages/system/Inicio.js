@@ -1,16 +1,17 @@
 import React from 'react';
 import './Inicio.css';
-import  Panel from './Panel';
-import Tarea from './Tareas';
+
 
 
 
 function Inicio() {
 
+    // despliega un resumen de las actividades del usuario
+    // podría añadirse un calendario
     return (
-        <>
-           
-        </>
+        <div className='inicio'>
+
+        </div>
     );
 }
 
