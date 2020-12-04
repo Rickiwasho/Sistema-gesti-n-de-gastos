@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Button} from '../../Button';
 import { Link } from 'react-router-dom';
 
+
 import './Panel.css';
 
 function Panel() {
@@ -27,7 +28,7 @@ function Panel() {
         <>
            <nav className="navbar">
                 <div className="navbar-container">
-                    <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+                    <Link to="/inicio" className="navbar-logo" onClick={closeMobileMenu}>
                         Soluciones integrales
                         <i class="fas fa-drafting-compass"/>
                     </Link>
@@ -36,12 +37,12 @@ function Panel() {
                     </div>
                     <ul className={click ? 'nav-menu active': 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/nosotros' className='nav-links' onClick={closeMobileMenu}>
+                            <Link to='/misobras' className='nav-links' onClick={closeMobileMenu}>
                                 OBRAS
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link to='/obras' className='nav-links' onClick={closeMobileMenu}>
+                            <Link to='/misobras' className='nav-links' onClick={closeMobileMenu}>
                                 COTIZACIONES
                             </Link>
                         </li>

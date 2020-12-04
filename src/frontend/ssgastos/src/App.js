@@ -11,6 +11,10 @@ import Contacto from './components/pages/Contacto';
 import {auth} from './components/firebase';
 import { useStateValue } from './components/StateProvider';
 import Inicio from './components/pages/system/Inicio';
+import Panel from './components/pages/system/Panel';
+
+import Tareas from './components/pages/system/Tareas';
+import MisObras from './components/pages/system/MisObras';
 
 function App() {
 
@@ -44,7 +48,12 @@ function App() {
     <Router>
       <div className='app'>
         <Switch>
+          <Route path='/misobras'>
+            <Panel/>
+            <MisObras/>
+          </Route>
           <Route path='/inicio'>
+            <Panel/>
             <Inicio/>
           </Route>
           <Route path='/nosotros'>
