@@ -5,9 +5,14 @@ import './Panel'
 
 
 function Inicio() {
+
+
+    
+
+
     return (
         <>
-            <Panel/>
+           
         
 
         </>
