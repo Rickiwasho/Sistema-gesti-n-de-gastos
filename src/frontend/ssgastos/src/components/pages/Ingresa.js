@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import '../../App.css';
 import { useHistory } from 'react-router-dom';
 import './Ingresa.css';
-import Inicio from './system/Inicio';
+import Dashboard from './system/Dashboard';
 import { auth } from '../firebase';
 
 function Ingresa () {
@@ -21,7 +21,7 @@ function Ingresa () {
             .signInWithEmailAndPassword(email, password)
             .then((auth) => {
                 
-                history.push('/inicio')
+                history.push('/Dashboard')
             })
             .catch(error => alert(error.message))
     }
@@ -36,7 +36,7 @@ function Ingresa () {
                 // it successfully created a new user with email and password
                 console.log(auth);
                 if (auth) {
-                    history.push('/inicio')
+                    history.push('/Dashboard')
                 }
             })
             .catch(error => alert(error.message))

@@ -10,11 +10,11 @@ import Servicio from './components/pages/Servicio';
 import Contacto from './components/pages/Contacto';
 import {auth} from './components/firebase';
 import { useStateValue } from './components/StateProvider';
-import Inicio from './components/pages/system/Inicio';
-import Panel from './components/pages/system/Panel';
+import Dashboard from './components/pages/system/Dashboard';
+//import Panel from './components/pages/system/Panel';
 
-import Tareas from './components/pages/system/Tareas';
-import MisObras from './components/pages/system/MisObras';
+//import Tareas from './components/pages/system/Tareas';
+//import MisObras from './components/pages/system/MisObras';
 
 function App() {
 
@@ -48,13 +48,10 @@ function App() {
     <Router>
       <div className='app'>
         <Switch>
-          <Route path='/misobras'>
-            <Panel/>
-            <MisObras/>
-          </Route>
-          <Route path='/inicio'>
-            <Panel/>
-            <Inicio/>
+          
+          <Route path='/Dashboard'>
+            <Dashboard/>
+            
           </Route>
           <Route path='/nosotros'>
             <Navbar/>
