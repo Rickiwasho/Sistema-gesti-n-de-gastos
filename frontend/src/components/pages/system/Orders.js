@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
+import Api from './Api';
 
 const test = [
   {
@@ -51,6 +52,21 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Orders() {
   const classes = useStyles();
+
+  useEffect( async () => {
+    try{
+        const response = await Api.get("/obra");
+        console.log("OBJETO FETCHEADO:");
+        console.log("OBJETO FETCHEADO:");
+        console.log(response);
+
+    }catch(err) {
+        console.log("Error retrieving data from API");
+        console.log(err);
+    }
+}, []);
+
+
   return (
     <React.Fragment>
       <Title>Obras Activas</Title>
