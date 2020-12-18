@@ -40,7 +40,8 @@ app.get('/api/obra/id/:id', async (req, res) => {
 
 app.post('/api/obra/', async (req, res) => {
     try{
-        const results = await db.query("INSERT INTO obras (nombre, ubicacion) VALUES ($1, $2) returning *;", [req.body.id.nombre], [req.body.id.ubicacion]);
+        const results = await db.query(
+            "INSERT INTO obras (nombre, ubicacion) VALUES ($1, $2);", [req.body.nombre, req.body.ubicacion]);
         res.status(200).json({
             status: "success",
             obras: results.rows,
