@@ -1,0 +1,12 @@
+# Copiar este archivo a .env y cambiar
+# los valores según sea necesario.
+
+# No subir la password al repositorio.
+
+PORT=4000
+
+PGUSER=postgres
+PGHOST=localhost
+PGPASSWORD=
+PGDATABASE=sgg
+PGPORT=5432
