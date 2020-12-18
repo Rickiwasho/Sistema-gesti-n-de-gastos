@@ -14,10 +14,11 @@ CREATE DATABASE sgg;
 
 CREATE TABLE obras(
     id BIGSERIAL NOT NULL,
-    nombre VARCHAR(60) NOT NULL
+    nombre VARCHAR(60) NOT NULL,
+    ubicacion VARCHAR(60) NOT NULL
 );
 
-INSERT INTO obras(nombre) values ('Obra de prueba');
+INSERT INTO obras(nombre, ubicacion) values ('Obra de prueba', 'Valdivia');
 
 SELECT * FROM obras;
 

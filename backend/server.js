@@ -14,14 +14,41 @@ app.get('/', (req, res) => {
     console.log("/ hit using GET");
 })
 
-app.get('/api/obra', (req, res) => {
+app.get('/api/obra', async (req, res) => {
     try{
-
+        const results = await db.query("SELECT * FROM obras;");
+        res.status(200).json({
+            status: "success",
+            obras: results.rows,
+        });
     }catch(err){
         console.log("error ");
     }
-})
+});
 
+app.get('/api/obra/id/:id', async (req, res) => {
+    try{
+        const results = await db.query("SELECT * FROM obras where id=$1;", [req.params.id]);
+        res.status(200).json({
+            status: "success",
+            obras: results.rows,
+        });
+    }catch(err){
+        console.log("error ");
+    }
+});
+
+app.post('/api/obra/', async (req, res) => {
+    try{
+        const results = await db.query("INSERT INTO obras (nombre, ubicacion) VALUES ($1, $2) returning *;", [req.body.id.nombre], [req.body.id.ubicacion]);
+        res.status(200).json({
+            status: "success",
+            obras: results.rows,
+        });
+    }catch(err){
+        console.log("error ");
+    }
+});
 
 
 
