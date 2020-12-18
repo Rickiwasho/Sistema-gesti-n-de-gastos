@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 
 app.get('/api/obra', async (req, res) => {
     try{
-        const results = await db.query("SELECT * FROM obras;");
+        const results = await db.query("SELECT * FROM obras ORDER BY id;");
         res.status(200).json({
             status: "success",
             obras: results.rows,
@@ -26,7 +26,7 @@ app.get('/api/obra', async (req, res) => {
     }
 });
 
-app.get('/api/obra/id/:id', async (req, res) => {
+app.get('/api/obra/:id', async (req, res) => {
     try{
         const results = await db.query("SELECT * FROM obras where id=$1;", [req.params.id]);
         res.status(200).json({
@@ -45,6 +45,31 @@ app.post('/api/obra/', async (req, res) => {
         res.status(200).json({
             status: "success",
             obras: results.rows,
+        });
+    }catch(err){
+        console.log("error ");
+    }
+});
+
+app.put('/api/obra/:id', async (req, res) => {
+    try{
+        const results = await db.query(
+            "UPDATE obras SET nombre=$1, ubicacion=$2 WHERE id=$3 returning *;", [req.body.nombre, req.body.ubicacion, req.params.id]);
+        res.status(200).json({
+            status: "success",
+            obras: results.rows,
+        });
+    }catch(err){
+        console.log("error ");
+    }
+});
+
+app.delete('/api/obra/:id', async (req, res) => {
+    try{
+        const results = await db.query(
+            "DELETE FROM obras WHERE id=$1;", [req.params.id]);
+        res.status(200).json({
+            status: "success",
         });
     }catch(err){
         console.log("error ");
