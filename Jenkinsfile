@@ -9,18 +9,19 @@ pipeline{
                 }
             }
             environment {
-                HOME = './frontend/'
+                HOME = '.'
             }
             stages {
                 stage('Install') {
                     steps {
-                        sh 'npm install'
+                        sh 'pwd'
+                        sh 'ls'
+                        sh '#npm install'
                     }
                 }
                 stage('Deploy'){
                     steps {
-                        sh 'cd ./frontend/'
-                        sh 'npm start'
+                        sh '#npm start'
                     }
                 }
             }
