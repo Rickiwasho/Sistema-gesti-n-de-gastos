@@ -14,13 +14,7 @@ pipeline{
             stages {
                 stage('Install') {
                     steps {
-                        sh 'cd frontend; ls'
-                        sh 'npm install frontend/.'
-                    }
-                }
-                stage('Deploy'){
-                    steps {
-                        sh 'cd frontend; npm start'
+                        sh 'cd frontend; npm install; npm start'
                     }
                 }
             }
