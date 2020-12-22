@@ -20,8 +20,7 @@ pipeline{
                 }
                 stage('Deploy'){
                     steps {
-                        sh 'cd; ls'
-                        sh 'npm start frontend/'
+                        sh 'cd frontend; npm start'
                     }
                 }
             }
