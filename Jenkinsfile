@@ -19,6 +19,7 @@ pipeline{
                 }
                 stage('Deploy'){
                     steps {
+                        sh 'cd ./frontend/'
                         sh 'npm start'
                     }
                 }
