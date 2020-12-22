@@ -14,16 +14,14 @@ pipeline{
             stages {
                 stage('Install') {
                     steps {
-                        sh 'cd frontend'
-                        sh 'pwd'
-                        sh 'ls'
-                        sh 'npm install'
+                        sh 'cd frontend; ls'
+                        sh 'npm install frontend/.'
                     }
                 }
                 stage('Deploy'){
                     steps {
-                        sh 'ls'
-                        sh '#npm start'
+                        sh 'cd; ls'
+                        sh 'npm start frontend/'
                     }
                 }
             }
