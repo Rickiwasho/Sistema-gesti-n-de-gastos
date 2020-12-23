@@ -1,7 +1,7 @@
 pipeline{
     agent none
     stages{
-        stage('Frontend: install & deploy'){
+        stage('Frontend: install & build'){
             agent {
                 docker {
                     image 'node:14-alpine'
