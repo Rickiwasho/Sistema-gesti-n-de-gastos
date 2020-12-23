@@ -12,11 +12,39 @@ pipeline{
                 HOME = '.'
             }
             stages {
-                stage('Install') {
-                    steps {
-                        sh 'cd frontend; npm install; npm start'
+                dir ('frontend') {
+                    stage('Install') {
+                        steps {
+                            sh 'npm install'
+                        }
+                    }
+                    stage('Build') {
+                        steps {
+                            sh 'npm run build'
+                        }
+                    }
+                    stage('Archive') {
+                        steps {
+                            archiveArtifacts 'build/**'
+                        }
                     }
                 }
+            }
+        }
+        stage('Deploy'){
+            agent {
+                label 'master'
+            }
+            options {
+                skipDefaultCheckout()
+            }
+            steps {
+                sh 'rm -rf /var/www/sggastos'
+                sh 'mkdir /var/www/sggastos'
+                sh '### cp -Rp build/** /var/www/sggastos/'
+                sh 'echo hola > /var/www/sggastos/index.html'
+                sh 'docker stop sggastos || true && docker rm sggastos || true'
+                sh 'docker run -dit --name sggastos -p 3017:3000 -v /var/www/sggastos/:/usr/local/apache2/htdocs/'
             }
         }
     }
