@@ -12,19 +12,23 @@ pipeline{
                 HOME = '.'
             }
             stages {
-                dir ('frontend') {
-                    stage('Install') {
-                        steps {
+                stage('Install') {
+                    steps {
+                        dir ('frontend') {
                             sh 'npm install'
                         }
                     }
-                    stage('Build') {
-                        steps {
+                }
+                stage('Build') {
+                    steps {
+                        dir ('frontend') {
                             sh 'npm run build'
                         }
                     }
-                    stage('Archive') {
-                        steps {
+                }
+                stage('Archive') {
+                    steps {
+                        dir ('frontend'){
                             archiveArtifacts 'build/**'
                         }
                     }
