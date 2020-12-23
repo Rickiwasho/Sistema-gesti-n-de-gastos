@@ -48,7 +48,7 @@ pipeline{
                 sh '### cp -Rp build/** /var/www/sggastos/'
                 sh 'echo hola > /var/www/sggastos/index.html'
                 sh 'docker stop sggastos || true && docker rm sggastos || true'
-                sh 'docker run -dit --name sggastos -p 3017:3000 -v /var/www/sggastos/:/usr/local/apache2/htdocs/'
+                sh 'docker run -dit --name sggastos -p 3017:3000 -v /var/www/sggastos/:/usr/local/apache2/htdocs/ httpd:2.4'
             }
         }
     }
