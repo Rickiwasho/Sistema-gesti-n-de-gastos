@@ -45,14 +45,10 @@ pipeline{
             steps {
                 sh 'rm -rf /var/www/sggastos'
                 sh 'mkdir /var/www/sggastos'
-                sh 'pwd'
-                sh 'ls'
-                sh 'echo "---------"'
-                sh 'ls */'
-                sh '#cp -Rp build/** /var/www/sggastos/'
+                sh 'cp -Rp frontend/build/** /var/www/sggastos/'
                 sh 'echo hola > /var/www/sggastos/test.html'
                 sh 'docker stop sggastos || true && docker rm sggastos || true'
-                sh 'docker run -dit --name sggastos -p 3017:3000 -v /var/www/sggastos/:/usr/local/apache2/htdocs/ httpd:2.4'
+                sh 'docker run -dit --name sggastos -p 8016:80 -v /var/www/sggastos/:/usr/local/apache2/htdocs/ httpd:2.4'
             }
         }
     }
