@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -7,19 +7,38 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
+import Api from './Api';
+
+const test = [
+  {
+    nombre: "Oficinas cocacola",
+    ubicacion: "Temuco",
+    fecha_i: "2020-10-03"
+  },
+  {
+    nombre: "Hotel Collin",
+    ubicacion: "Rio bueno",
+    fecha_i: "2020-10-03"
+  }
+];
 
 // Generate Order Data
 function createData(id, date, name, location,  amount) {
   return { id, date, name, location, amount };
 }
+//const map1 = array1.map(x => x * 2);
 
-const rows = [
-  createData(0, '16 Feb, 2019', 'Hospital Municipal', 'Ancud, Los Lagos', "174.445.162"),
+
+const rows = test.map((x, index) =>
+  createData(index, x.fecha_i , x.nombre, x.ubicacion, "10 dolares"));
+
+/*
+  createData(0, '16 Feb, 2019', test.nombre, test.ubicacion , "174.445.162"),
   createData(1, '01 Mar, 2020', 'Biblioteca Municipal', 'Lautaro, Araucanía', "80.866.099"),
   createData(2, '30 Mar, 2020', 'Cancha Sintética', 'Valdivia, Los Ríos', "15.200.581"),
   createData(3, '18 Jun, 2020', 'Restaurant "Las Brazas"', 'Osorno, Los Lagos', "6.354.349"),
   createData(4, '22 Dic, 2020', 'Puntos ecológicos', 'Panguipulli, Los Ríos', "1.212.379"),
-];
+*/
 
 function preventDefault(event) {
   event.preventDefault();
@@ -33,6 +52,21 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Orders() {
   const classes = useStyles();
+
+  useEffect( async () => {
+    try{
+        const response = await Api.get("/obra");
+        console.log("OBJETO FETCHEADO:");
+        console.log("OBJETO FETCHEADO:");
+        console.log(response);
+
+    }catch(err) {
+        console.log("Error retrieving data from API");
+        console.log(err);
+    }
+}, []);
+
+
   return (
     <React.Fragment>
       <Title>Obras Activas</Title>
