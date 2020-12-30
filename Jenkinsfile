@@ -51,16 +51,13 @@ pipeline{
                 sh 'docker stop sggastos || true && docker rm sggastos || true'
                 sh 'docker run -dit --name sggastos -p 8016:80 -v /var/www/sggastos/:/usr/local/apache2/htdocs/ httpd:2.4'
 
-                sh 'echo ________________________________________'
-
                 sh 'docker stop sggastos-backend'
                 sh 'docker rm sggastos-backend'
                 sh 'docker run -dit --name sggastos-backend -p 8017:4000 node'
                 sh 'docker exec sggastos-backend git clone https://github.com/rickiwasho/sggastos'
-                sh 'docker exec sggastos-backend ls'
-                sh 'docker exec sggastos-backend bash -c cd sggastos/backend/'
-                sh 'docker exec sggastos-backend ls sggastos/'
-                sh 'docker exec sggastos-backend ls'
+                sh 'docker exec sggastos-backend -w /sggastos/backend npm install'
+                sh 'docker exec sggastos-backend -w /sggastos/backend npm start'
+
             }
         }
     }
