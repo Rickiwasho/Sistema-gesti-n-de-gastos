@@ -1,0 +1,14 @@
+docker stop sggastos-db
+
+docker rm sggastos-db
+
+docker run --name sggastos-db \
+    -e POSTGRES_PASSWORD=mipassword \
+    -p 5464:5432 -d postgres:alpine
+
+docker exec sggastos-db wget https://diegosandoval.net/random/sggastos.sql
+
+sleep 12
+
+docker exec sggastos-db psql -U postgres -a -f sggastos.sql
+
