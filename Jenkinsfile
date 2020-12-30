@@ -16,7 +16,7 @@ pipeline{
                 sh 'docker exec sggastos-backend git clone https://github.com/rickiwasho/sggastos'
                 sh 'docker exec sggastos-backend ls'
                 sh 'docker exec sggastos-backend bash -c cd sggastos/backend/ && pwd'
-                sh 'docker exec sggastos-backend bash -c pwd'
+                sh 'docker exec sggastos-backend ls sggastos/'
                 sh 'docker exec sggastos-backend ls'
 
                 sh 'echo ________________________________________'
