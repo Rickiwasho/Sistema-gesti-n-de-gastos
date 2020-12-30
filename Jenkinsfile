@@ -10,6 +10,8 @@ pipeline{
                 skipDefaultCheckout()
             }
             steps {
+                sh 'docker stop sggastos-backend'
+                sh 'docker rm sggastos-backend'
                 sh 'docker run -dit --name sggastos-backend -p 8017:4000 node'
                 sh 'docker exec sggastos-backend git clone https://github.com/rickiwasho/sggastos'
                 sh 'docker exec sggastos-backend cd sggastos/backend/'
