@@ -55,8 +55,8 @@ pipeline{
                 sh 'docker rm sggastos-backend'
                 sh 'docker run -dit --name sggastos-backend -p 8017:4000 node'
                 sh 'docker exec sggastos-backend git clone https://github.com/rickiwasho/sggastos'
-                sh 'docker exec sggastos-backend -w /sggastos/backend npm install'
-                sh 'docker exec sggastos-backend -w /sggastos/backend npm start'
+                sh 'docker exec -w /sggastos/backend sggastos-backend npm install'
+                sh 'docker exec -w /sggastos/backend sggastos-backend npm start'
 
             }
         }
