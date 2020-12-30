@@ -10,7 +10,7 @@ pipeline{
                 skipDefaultCheckout()
             }
             steps {
-                sh 'docker run --name sggastos-backend -p 8017:4000 node'
+                sh 'docker run -dit --name sggastos-backend -p 8017:4000 node'
                 sh 'docker exec sggastos-backend git clone https://github.com/rickiwasho/sggastos'
                 sh 'docker exec sggastos-backend cd sggastos/backend/'
                 sh 'docker exec sggastos-backend pwd'
