@@ -14,10 +14,10 @@ pipeline{
                 sh 'docker rm sggastos-backend'
                 sh 'docker run -dit --name sggastos-backend -p 8017:4000 node'
                 sh 'docker exec sggastos-backend git clone https://github.com/rickiwasho/sggastos'
-                sh 'docker exec sggastos-backend bash ls'
+                sh 'docker exec sggastos-backend ls'
                 sh 'docker exec sggastos-backend bash -c cd sggastos/backend/'
                 sh 'docker exec sggastos-backend bash -c pwd'
-                sh 'docker exec sggastos-backend bash ls'
+                sh 'docker exec sggastos-backend ls'
 
                 sh 'echo ________________________________________'
 
