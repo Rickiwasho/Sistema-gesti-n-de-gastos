@@ -55,6 +55,8 @@ pipeline{
                 sh 'docker rm sggastos-backend'
                 sh 'docker run -dit --name sggastos-backend -p 8017:3000 node'
                 sh 'docker exec sggastos-backend git clone https://github.com/rickiwasho/sggastos'
+                sh 'docker exec -w sggastos/backend sggastos-backend cp /util/dotenv_template .env'
+                
                 sh 'docker exec -w /sggastos/backend sggastos-backend npm install'
                 sh 'docker exec -w /sggastos/backend sggastos-backend npm start'
 
