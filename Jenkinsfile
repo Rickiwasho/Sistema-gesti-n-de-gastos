@@ -35,6 +35,7 @@ pipeline{
                 }
             }
         }
+        
         stage('Deploy'){
             agent {
                 label 'master'
@@ -49,6 +50,13 @@ pipeline{
                 sh 'echo hola > /var/www/sggastos/test.html'
                 sh 'docker stop sggastos || true && docker rm sggastos || true'
                 sh 'docker run -dit --name sggastos -p 8016:80 -v /var/www/sggastos/:/usr/local/apache2/htdocs/ httpd:2.4'
+
+                sh 'echo ________________________________________'
+
+                sh 'docker run --name sggastos-backend -p 8017:4000 node'
+                sh 'docker exec sggastos-backend git clone https://github.com/rickiwasho/sggastos'
+                sh 'docker exec sggastos-backend cd sggastos/backend/'
+                sh 'docker exec sggastos-backend pwd'
             }
         }
     }
