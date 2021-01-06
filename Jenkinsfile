@@ -68,8 +68,8 @@ pipeline{
 
                 sh 'docker network create -d bridge --subnet 172.25.0.0/16 sggastos-net || true'
 
-                sh 'docker network connect sggastos-net sggastos-backend'
-                sh 'docker network connect sggastos-net sggastos_db'
+                sh 'docker network connect sggastos-net sggastos-backend || true'
+                sh 'docker network connect sggastos-net sggastos_db || true'
                 
                 sh 'docker exec -w /sggastos/backend sggastos-backend npm install'
                 sh 'docker exec -w /sggastos/backend sggastos-backend npm start'
