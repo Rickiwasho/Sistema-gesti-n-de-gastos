@@ -51,6 +51,14 @@ pipeline{
                 sh 'docker stop sggastos || true && docker rm sggastos || true'
                 sh 'docker run -dit --name sggastos -p 8016:80 -v /var/www/sggastos/:/usr/local/apache2/htdocs/ httpd:2.4'
 
+                sh 'docker stop sggastos-db || true'
+                sh 'docker rm sggastos-db || true'
+                sh 'docker run --name sggastos-db -e POSTGRES_PASSWORD=mipassword -p 8018:5432 -d postgres:alpine'
+                sh 'docker exec sggastos-db wget https://diegosandoval.net/random/sggastos.sql'
+                sh 'sleep 10'
+                sh 'docker exec sggastos-db psql -U postgres -a -f sggastos.sql'
+                sh 'docker exec sggastos-db psql -U postgres '
+
                 sh 'docker stop sggastos-backend || true'
                 sh 'docker rm sggastos-backend || true'
                 sh 'docker run -dit --name sggastos-backend -p 8017:3000 node'
@@ -59,14 +67,6 @@ pipeline{
                 
                 sh 'docker exec -w /sggastos/backend sggastos-backend npm install'
                 sh 'docker exec -w /sggastos/backend sggastos-backend npm start'
-
-                sh 'docker stop sggastos-db || true'
-                sh 'docker rm sggastos-db || true'
-                sh 'docker run --name sggastos-db -e POSTGRES_PASSWORD=mipassword -p 8018:5432 -d postgres:alpine'
-                sh 'docker exec sggastos-db wget https://diegosandoval.net/random/sggastos.sql'
-                sh 'sleep 10'
-                sh 'docker exec sggastos-db psql -U postgres -a -f sggastos.sql'
-                sh 'docker exec sggastos-db psql -U postgres '
             }
         }
     }
