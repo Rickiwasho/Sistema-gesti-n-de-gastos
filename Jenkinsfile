@@ -63,6 +63,11 @@ pipeline{
                 sh 'docker run -dit --name sggastos-backend -p 8017:3000 node'
                 sh 'docker exec sggastos-backend git clone https://github.com/rickiwasho/sggastos'
                 sh 'docker exec -w /sggastos/backend sggastos-backend cp util/dotenv_template .env'
+
+                sh 'docker network create -d bridge --subnet 172.25.0.0/16 sggastos-net'
+
+                sh 'docker network connect sggastos-net sggastos-backend'
+                sh 'docker network connect sggastos-net sggastos-db'
                 
                 sh 'docker exec -w /sggastos/backend sggastos-backend npm install'
                 sh 'docker exec -w /sggastos/backend sggastos-backend npm start'
