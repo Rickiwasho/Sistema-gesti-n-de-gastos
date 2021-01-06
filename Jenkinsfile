@@ -57,7 +57,6 @@ pipeline{
                 sh 'docker exec sggastos-db wget https://diegosandoval.net/random/sggastos.sql'
                 sh 'sleep 10'
                 sh 'docker exec sggastos-db psql -U postgres -a -f sggastos.sql'
-                sh 'docker exec sggastos-db psql -U postgres '
 
                 sh 'docker stop sggastos-backend || true'
                 sh 'docker rm sggastos-backend || true'
