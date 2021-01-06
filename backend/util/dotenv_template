@@ -7,4 +7,4 @@ PGUSER=postgres
 PGHOST=sggastos_db
 PGPASSWORD=mipassword
 PGDATABASE=sgg
-PGPORT=8018
+PGPORT=5432
