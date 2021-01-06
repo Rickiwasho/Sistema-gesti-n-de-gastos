@@ -4,7 +4,7 @@
 PORT=3000
 
 PGUSER=postgres
-PGHOST=sggastos-db
+PGHOST=sggastos_db
 PGPASSWORD=mipassword
 PGDATABASE=sgg
 PGPORT=8018
