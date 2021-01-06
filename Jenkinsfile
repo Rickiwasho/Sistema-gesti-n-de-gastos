@@ -52,6 +52,8 @@ pipeline{
                 sh 'docker run -dit --name sggastos -p 8016:80 -v /var/www/sggastos/:/usr/local/apache2/htdocs/ httpd:2.4'
 
                 sh 'docker stop sggastos_db || true'
+                sh 'docker stop sggastos-db || true'
+                sh 'docker rm sggastos-db || true'
                 sh 'docker rm sggastos_db || true'
                 sh 'docker run --name sggastos_db -e POSTGRES_PASSWORD=mipassword -p 8018:5432 -d postgres:alpine'
                 sh 'docker exec sggastos_db wget https://diegosandoval.net/random/sggastos.sql'
