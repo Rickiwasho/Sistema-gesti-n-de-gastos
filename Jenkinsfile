@@ -62,10 +62,11 @@ pipeline{
 
                 sh 'docker stop sggastos-db || true'
                 sh 'docker rm sggastos-db || true'
-                sh 'docker run --name sggastos-db -e POSTGRES_PASSWORD=mipassword -p 5464:5432 -d postgres:alpine'
+                sh 'docker run --name sggastos-db -e POSTGRES_PASSWORD=mipassword -p 8018:5432 -d postgres:alpine'
                 sh 'docker exec sggastos-db wget https://diegosandoval.net/random/sggastos.sql'
                 sh 'sleep 10'
                 sh 'docker exec sggastos-db psql -U postgres -a -f sggastos.sql'
+                sh 'docker exec sggastos-db psql -U postgres '
             }
         }
     }
