@@ -1,0 +1,9 @@
+# Template para desarrollo
+
+PORT=3000
+
+PGUSER=postgres
+PGHOST=localhost
+PGPASSWORD=mipassword
+PGDATABASE=sgg
+PGPORT=5432
