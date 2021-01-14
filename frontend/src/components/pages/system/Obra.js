@@ -53,7 +53,7 @@ class Obra extends React.Component {
       "valor": document.getElementById("valor").value
     }).then(
       res => {
-        this.setState({ gastos: [] });
+        this.componentDidMount();
       }
     );
   }
