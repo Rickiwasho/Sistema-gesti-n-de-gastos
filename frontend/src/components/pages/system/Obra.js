@@ -6,6 +6,8 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 import Title from './Title';
 import axios from 'axios';
 
@@ -37,6 +39,10 @@ class Obra extends React.Component {
     });
   }
 
+  sendgastos(){
+    console.log("aksdfl");
+  }
+
   render(){
     const { classes } = this.props;
     return (
@@ -65,11 +71,9 @@ class Obra extends React.Component {
           </TableBody>
           
         </Table>
-        <div className={classes.seeMore}>
-          <Link color="primary" href="#" onClick={preventDefault}>
-            Ver más obras...
-          </Link>
-        </div>
+
+              <br></br>
+
       <Title>Gastos de la obra</Title>
       <Table size="small">
           <TableHead>
@@ -93,6 +97,16 @@ class Obra extends React.Component {
           
         </Table>
 
+
+      <Title>Añadir nuevo gasto</Title>
+      <form className={classes.root} noValidate autoComplete="off">
+        <TextField id="nombre" label="Nombre" />
+        <TextField id="valor" label="Valor" />
+      </form>
+
+        <Button variant="contained" color="primary" onClick={this.sendgastos}>
+          Añadir gasto
+        </Button>
 
       </>
     );
