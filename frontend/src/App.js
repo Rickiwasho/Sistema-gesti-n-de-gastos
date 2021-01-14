@@ -42,43 +42,20 @@ function App() {
     })
   }, [])
 
-
   return (
     <>
     <Router>
       <div className='app'>
         <Switch>
-          
           <Route path='/Dashboard'>
             <Dashboard/>
-            
           </Route>
-          <Route path='/nosotros'>
-            <Navbar/>
-            <Nosotros/>
-          </Route>
-          <Route path='/Obras'>
-            <Navbar/>
-            <Obras/>
-          </Route>
-          <Route path='/Ingresa'>
-            <Ingresa/>
-          </Route>
-          <Route path='/Servicio'>
-            <Navbar/>
-            <Servicio/>
-          </Route>
-          <Route path='/Contacto'>
-            <Navbar/>
-            <Contacto/>
-          </Route>
+
           <Route path='/'>
-            <Navbar/>
-            <Home/>
+            <Ingresa/>
           </Route>
         </Switch>
       </div>
-
     </Router>
     </>
   );
