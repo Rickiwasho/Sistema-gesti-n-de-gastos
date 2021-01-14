@@ -103,6 +103,19 @@ app.post('/api/obra/:id/gasto', async (req, res) => {
     }
 });
 
+app.delete('/api/obra/:id/gasto/:id2', async (req, res) => {
+    try{
+        const results = await db.query(
+            "DELETE FROM gastos WHERE id=$1 returning *;", [req.params.id2]);
+        res.status(200).json({
+            status: "success",
+            gastos: results.rows,
+        });
+    }catch(err){
+        console.log("error ");
+    }
+});
+
 
 
 /* --------------------------------------- */

@@ -28,6 +28,7 @@ class Obra extends React.Component {
   constructor(props) {
     super(props);
     this.sendgastos = this.sendgastos.bind(this);
+    this.deletegasto = this.deletegasto.bind(this);
   }
 
   state = {
@@ -56,6 +57,15 @@ class Obra extends React.Component {
         this.componentDidMount();
       }
     );
+  }
+
+  deletegasto(i){
+    console.log("deleting gasto " + i);
+    axios.delete("http://localhost:3001/api/obra/" + id + "/gasto").then(
+      res => {
+        this.setState({ gastos: this.state.gastos.filter(gasto => gasto.id !== i)});
+      }
+    )
   }
 
   render(){
@@ -105,6 +115,7 @@ class Obra extends React.Component {
                 <TableCell>{gasto.fecha.split("T")[0]}</TableCell>
                 <TableCell>{gasto.nombre}</TableCell>
                 <TableCell>{gasto.valor}</TableCell>
+                <TableCell><span onClick={() => {this.deletegasto(gasto.id)}}>❌</span></TableCell>
               </TableRow>
             ))}
             
@@ -112,16 +123,19 @@ class Obra extends React.Component {
           
         </Table>
 
-
+        <br></br>
       <Title>Añadir nuevo gasto</Title>
       <form className={classes.root} noValidate autoComplete="off">
         <TextField id="nombre" label="Nombre" />
         <TextField id="valor" label="Valor" />
       </form>
-
+      <br></br>
         <Button variant="contained" color="primary" onClick={this.sendgastos}>
           Añadir gasto
         </Button>
+        <br></br>
+        <br></br>
+        <br></br>
 
       </>
     );
