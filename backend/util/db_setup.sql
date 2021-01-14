@@ -29,5 +29,7 @@ CREATE TABLE gastos(
 
 INSERT INTO obras(nombre, ubicacion) values ('Obra de prueba', 'Valdivia');
 
+INSERT INTO gastos(nombre, valor, obra) values ('Martillo', 1500, 1);
+
 SELECT * FROM obras;
 

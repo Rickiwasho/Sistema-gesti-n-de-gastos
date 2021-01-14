@@ -90,7 +90,18 @@ app.get('/api/obra/:id/gasto', async (req, res) => {
     }
 });
 
-
+app.post('/api/obra/:id/gasto', async (req, res) => {
+    try{
+        const results = await db.query(
+            "INSERT INTO gastos (nombre, valor, obra) VALUES ($1, $2, $3) returning *;", [req.body.nombre, req.body.valor, req.params.id]);
+        res.status(200).json({
+            status: "success",
+            obras: results.rows,
+        });
+    }catch(err){
+        console.log("error ");
+    }
+});
 
 
 
