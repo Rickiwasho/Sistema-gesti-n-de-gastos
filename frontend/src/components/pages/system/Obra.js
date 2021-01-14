@@ -1,16 +1,27 @@
 import React, {useState} from 'react';
-import {useParams} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
+ class Obra extends React.Component {
 
-function Obra() {
+    state = {
+        id: 0,
+        obra: {},
+      };
 
-    let { id } = useParams();
+    componentDidMount(){
+        const id = this.props.match.params.id;
+        this.setState({ id: id});
+    }
 
-    return (
-        <>
-            Hola, {id}
-        </>
-    )
+    render(){
+        return (
+            <>
+                Hola, {this.state.id}
+            </>
+        );
+    }
+    
 }
 
-export default Obra;
+export default withRouter(Obra);
+
