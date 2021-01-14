@@ -9,6 +9,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 import axios from 'axios';
 
+import { withRouter} from 'react-router-dom';
+
 import { render } from '@testing-library/react';
 
 const useStyles = theme => ({
@@ -24,7 +26,7 @@ class Obra extends React.Component {
   };
 
   componentDidMount(){
-    axios.get("http://localhost:3001/api/obra/1").then(res => {
+    axios.get("http://localhost:3001/api/obra/" + this.props.match.params.id).then(res => {
       console.log(res);
       this.setState({ obras: res.data.obras});
     })
@@ -69,4 +71,6 @@ class Obra extends React.Component {
   }
 }
 
-export default withStyles(useStyles)(Obra)
+export default withRouter(withStyles(useStyles)(Obra));
+
+//export default withRouter(Obra);
