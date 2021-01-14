@@ -78,6 +78,20 @@ app.delete('/api/obra/:id', async (req, res) => {
     }
 });
 
+app.get('/api/obra/:id/gasto', async (req, res) => {
+    try{
+        const results = await db.query("SELECT * FROM gastos WHERE obra=$1 ORDER BY id;", [req.params.id]);
+        res.status(200).json({
+            status: "success",
+            gastos: results.rows,
+        });
+    }catch(err){
+        console.log("error ");
+    }
+});
+
+
+
 
 
 /* --------------------------------------- */
