@@ -64,6 +64,17 @@ const useStyles = theme => ({
 
 class Orders extends React.Component {
 
+  state = {
+    obras: [],
+  };
+
+  componentDidMount(){
+    axios.get("http://localhost:3001/api/obra").then(res => {
+      console.log(res);
+      this.setState({ obras: res.data.obras});
+    })
+  }
+
   render(){
     const { classes } = this.props;
     return (
@@ -79,16 +90,16 @@ class Orders extends React.Component {
             </TableRow>
           </TableHead>
           <TableBody>
-            {/*
-            {rows.map((row) => (
-              <TableRow key={row.id}>
-                <TableCell>{row.date}</TableCell>
-                <TableCell>{row.name}</TableCell>
-                <TableCell>{row.location}</TableCell>
-                <TableCell align="right">{row.amount}</TableCell>
+            
+            {this.state.obras.map((obra) => (
+              <TableRow key={obra.id}>
+                <TableCell>fecha</TableCell>
+                <TableCell>{obra.nombre}</TableCell>
+                <TableCell>{obra.ubicacion}</TableCell>
+                <TableCell align="right">(valor)</TableCell>
               </TableRow>
             ))}
-            */}
+            
           </TableBody>
           
         </Table>
