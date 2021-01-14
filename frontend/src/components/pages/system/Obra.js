@@ -25,6 +25,11 @@ var id = 0;
 
 class Obra extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.sendgastos = this.sendgastos.bind(this);
+  }
+
   state = {
     obras: [],
     gastos: []
@@ -46,7 +51,11 @@ class Obra extends React.Component {
     axios.post("http://localhost:3001/api/obra/" + id + "/gasto", {
       "nombre": document.getElementById("nombre").value,
       "valor": document.getElementById("valor").value
-    })
+    }).then(
+      res => {
+        this.setState({ gastos: [] });
+      }
+    );
   }
 
   render(){
