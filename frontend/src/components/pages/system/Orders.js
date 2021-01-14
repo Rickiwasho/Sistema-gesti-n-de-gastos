@@ -1,14 +1,17 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, preventDefault, ClassComponent} from 'react';
 import Link from '@material-ui/core/Link';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
-import Api from './Api';
+import axios from 'axios';
 
+import { render } from '@testing-library/react';
+
+/*
 const test = [
   {
     nombre: "Oficinas cocacola",
@@ -39,6 +42,7 @@ const rows = test.map((x, index) =>
   createData(3, '18 Jun, 2020', 'Restaurant "Las Brazas"', 'Osorno, Los Lagos', "6.354.349"),
   createData(4, '22 Dic, 2020', 'Puntos ecológicos', 'Panguipulli, Los Ríos', "1.212.379"),
 */
+/*
 
 function preventDefault(event) {
   event.preventDefault();
@@ -49,6 +53,60 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
   },
 }));
+
+*/
+
+const useStyles = theme => ({
+  seeMore: {
+    marginTop: theme.spacing(3),
+  },
+});
+
+class Orders extends React.Component {
+
+  render(){
+    const { classes } = this.props;
+    return (
+      <React.Fragment>        
+        <Title>Obras Activas</Title>
+        <Table size="small">
+          <TableHead>
+            <TableRow>
+              <TableCell>Fecha inicio</TableCell>
+              <TableCell>Nombre</TableCell>
+              <TableCell>Ubicación</TableCell>
+              <TableCell align="right">Gastos totales</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {/*
+            {rows.map((row) => (
+              <TableRow key={row.id}>
+                <TableCell>{row.date}</TableCell>
+                <TableCell>{row.name}</TableCell>
+                <TableCell>{row.location}</TableCell>
+                <TableCell align="right">{row.amount}</TableCell>
+              </TableRow>
+            ))}
+            */}
+          </TableBody>
+          
+        </Table>
+        <div className={classes.seeMore}>
+          <Link color="primary" href="#" onClick={preventDefault}>
+            Ver más obras...
+          </Link>
+        </div>
+          
+      </React.Fragment>
+    );
+  }
+}
+
+
+export default withStyles(useStyles)(Orders)
+
+/*
 
 export default function Orders() {
   const classes = useStyles();
@@ -65,40 +123,7 @@ export default function Orders() {
         console.log(err);
     }
 }, []);
-
-
-  return (
-    <React.Fragment>
-
-      <Link href="/Obra">
-      Ir a obra especifica 
-      </Link>
-      <Title>Obras Activas</Title>
-      <Table size="small">
-        <TableHead>
-          <TableRow>
-            <TableCell>Fecha inicio</TableCell>
-            <TableCell>Nombre</TableCell>
-            <TableCell>Ubicación</TableCell>
-            <TableCell align="right">Gastos totales</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.location}</TableCell>
-              <TableCell align="right">{row.amount}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <div className={classes.seeMore}>
-        <Link color="primary" href="#" onClick={preventDefault}>
-          Ver más obras...
-        </Link>
-      </div>
-    </React.Fragment>
-  );
+  
 }
+
+*/
