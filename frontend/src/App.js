@@ -53,7 +53,7 @@ function App() {
             <Dashboard/>
           </Route>
 
-          <Route path='/Obra'>
+          <Route path='/Obra/:id'>
             <Obra/>
           </Route>
 

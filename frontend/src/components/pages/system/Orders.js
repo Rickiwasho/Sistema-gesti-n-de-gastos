@@ -49,7 +49,7 @@ class Orders extends React.Component {
             {this.state.obras.map((obra) => (
               <TableRow key={obra.id}>
                 <TableCell>fecha</TableCell>
-                <TableCell><Link href="/Obra">{obra.nombre}</Link></TableCell>
+                <TableCell><Link href={"/Obra/" + obra.id}>{obra.nombre}</Link></TableCell>
                 <TableCell>{obra.ubicacion}</TableCell>
                 <TableCell align="right">(valor)</TableCell>
               </TableRow>
