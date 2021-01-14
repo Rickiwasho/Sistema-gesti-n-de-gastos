@@ -77,7 +77,6 @@ class Obra extends React.Component {
               <TableCell>Fecha</TableCell>
               <TableCell>Nombre</TableCell>
               <TableCell>Valor</TableCell>
-              <TableCell align="right">Gastos totales</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -87,7 +86,6 @@ class Obra extends React.Component {
                 <TableCell>{gasto.fecha.split("T")[0]}</TableCell>
                 <TableCell>{gasto.nombre}</TableCell>
                 <TableCell>{gasto.valor}</TableCell>
-                <TableCell align="right">(valor)</TableCell>
               </TableRow>
             ))}
             
