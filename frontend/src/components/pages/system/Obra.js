@@ -18,6 +18,7 @@ function Obra() {
     return (
         <span className='obra'>
             <span className='tinderCards-cardContainer'>
+                VIENDO OBRA ESPECIFICA
                  <td></td>
                  <td></td>
                  <td></td>

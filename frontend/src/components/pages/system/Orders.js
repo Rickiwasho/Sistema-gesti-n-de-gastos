@@ -69,6 +69,10 @@ export default function Orders() {
 
   return (
     <React.Fragment>
+
+      <Link href="/Obra">
+      Ir a obra especifica 
+      </Link>
       <Title>Obras Activas</Title>
       <Table size="small">
         <TableHead>

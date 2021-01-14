@@ -13,6 +13,8 @@ import { useStateValue } from './components/StateProvider';
 import Dashboard from './components/pages/system/Dashboard';
 //import Panel from './components/pages/system/Panel';
 
+import Obra from './components/pages/system/Obra';
+
 //import Tareas from './components/pages/system/Tareas';
 //import MisObras from './components/pages/system/MisObras';
 
@@ -51,9 +53,15 @@ function App() {
             <Dashboard/>
           </Route>
 
+          <Route path='/Obra'>
+            <Obra/>
+          </Route>
+
+          {/* Siempre dejar esta ruta al final */}
           <Route path='/'>
             <Ingresa/>
           </Route>
+          
         </Switch>
       </div>
     </Router>
