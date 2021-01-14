@@ -35,7 +35,7 @@ class Obra extends React.Component {
   render(){
     const { classes } = this.props;
     return (
-      <React.Fragment>        
+      <>        
         <Title>Detalles de la obra</Title>
         <Table size="small">
           <TableHead>
@@ -50,7 +50,7 @@ class Obra extends React.Component {
             
             {this.state.obras.map((obra) => (
               <TableRow key={obra.id}>
-                <TableCell>fecha</TableCell>
+                <TableCell>{obra.fecha.split("T")[0]}</TableCell>
                 <TableCell><Link href={"/Obra/" + obra.id}>{obra.nombre}</Link></TableCell>
                 <TableCell>{obra.ubicacion}</TableCell>
                 <TableCell align="right">(valor)</TableCell>
@@ -65,8 +65,33 @@ class Obra extends React.Component {
             Ver más obras...
           </Link>
         </div>
+      <Title>Gastos de la obra</Title>
+      <Table size="small">
+          <TableHead>
+            <TableRow>
+              <TableCell>Fecha inicio</TableCell>
+              <TableCell>Nombre</TableCell>
+              <TableCell>Ubicación</TableCell>
+              <TableCell align="right">Gastos totales</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            
+            {this.state.obras.map((obra) => (
+              <TableRow key={obra.id}>
+                <TableCell>{obra.fecha.split("T")[0]}</TableCell>
+                <TableCell><Link href={"/Obra/" + obra.id}>{obra.nombre}</Link></TableCell>
+                <TableCell>{obra.ubicacion}</TableCell>
+                <TableCell align="right">(valor)</TableCell>
+              </TableRow>
+            ))}
+            
+          </TableBody>
           
-      </React.Fragment>
+        </Table>
+
+
+      </>
     );
   }
 }

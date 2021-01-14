@@ -15,6 +15,7 @@ CREATE DATABASE sgg;
 CREATE TABLE obras(
     id BIGSERIAL NOT NULL,
     nombre VARCHAR(60) NOT NULL,
+    fecha DATE DEFAULT CURRENT_DATE,
     ubicacion VARCHAR(60) NOT NULL
 );
 
