@@ -21,6 +21,8 @@ const useStyles = theme => ({
   },
 });
 
+var id = 0;
+
 class Obra extends React.Component {
 
   state = {
@@ -29,6 +31,7 @@ class Obra extends React.Component {
   };
 
   componentDidMount(){
+    id = this.props.match.params.id;
     axios.get("http://localhost:3001/api/obra/" + this.props.match.params.id).then(res => {
       console.log(res);
       this.setState({ obras: res.data.obras});
@@ -40,7 +43,10 @@ class Obra extends React.Component {
   }
 
   sendgastos(){
-    console.log("aksdfl");
+    axios.post("http://localhost:3001/api/obra/" + id + "/gasto", {
+      "nombre": document.getElementById("nombre").value,
+      "valor": document.getElementById("valor").value
+    })
   }
 
   render(){
