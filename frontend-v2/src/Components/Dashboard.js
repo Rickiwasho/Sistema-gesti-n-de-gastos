@@ -21,8 +21,8 @@ export default class Dashboard extends React.Component{
     <div>
       <h2>Obras Activas</h2>
         <table>
-          <th>Nombre</th><th>Ubicación</th><th>Gastos acumulados</th>
-          {this.state.obras.map(obra => <tr><td>{obra.nombre}</td><td> {obra.ubicacion}</td><td>0$</td></tr>)}
+          <th>Nombre</th><th>Ubicación</th><th>Gastos acumulados</th><th>editar</th>
+          {this.state.obras.map(obra => <tr><td>{obra.nombre}</td><td> {obra.ubicacion}</td><td>0$</td><td><a href={'/obra/' + obra.id} >editar</a></td></tr>)}
         </table>
     </div>
     );
