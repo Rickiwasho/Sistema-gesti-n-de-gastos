@@ -23,13 +23,18 @@ class Obra extends React.Component {
 
   state = {
     obras: [],
+    gastos: []
   };
 
   componentDidMount(){
     axios.get("http://localhost:3001/api/obra/" + this.props.match.params.id).then(res => {
       console.log(res);
       this.setState({ obras: res.data.obras});
-    })
+    });
+    axios.get("http://localhost:3001/api/obra/" + this.props.match.params.id + "/gasto").then(res => {
+      console.log(res);
+      this.setState({ gastos: res.data.gastos});
+    });
   }
 
   render(){
@@ -69,19 +74,19 @@ class Obra extends React.Component {
       <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell>Fecha inicio</TableCell>
+              <TableCell>Fecha</TableCell>
               <TableCell>Nombre</TableCell>
-              <TableCell>Ubicación</TableCell>
+              <TableCell>Valor</TableCell>
               <TableCell align="right">Gastos totales</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             
-            {this.state.obras.map((obra) => (
-              <TableRow key={obra.id}>
-                <TableCell>{obra.fecha.split("T")[0]}</TableCell>
-                <TableCell><Link href={"/Obra/" + obra.id}>{obra.nombre}</Link></TableCell>
-                <TableCell>{obra.ubicacion}</TableCell>
+            {this.state.gastos.map((gasto) => (
+              <TableRow key={gasto.id}>
+                <TableCell>{gasto.fecha.split("T")[0]}</TableCell>
+                <TableCell>{gasto.nombre}</TableCell>
+                <TableCell>{gasto.valor}</TableCell>
                 <TableCell align="right">(valor)</TableCell>
               </TableRow>
             ))}
