@@ -61,7 +61,7 @@ class Obra extends React.Component {
 
   deletegasto(i){
     console.log("deleting gasto " + i);
-    axios.delete("http://localhost:3001/api/obra/" + id + "/gasto").then(
+    axios.delete("http://localhost:3001/api/obra/" + "1" + "/gasto/" + i ).then(
       res => {
         this.setState({ gastos: this.state.gastos.filter(gasto => gasto.id !== i)});
       }
