@@ -46,6 +46,13 @@ class Obra extends React.Component {
     axios.get("http://localhost:3001/api/obra/" + this.props.match.params.id + "/gasto").then(res => {
       console.log(res);
       this.setState({ gastos: res.data.gastos});
+      
+      total = 0;
+      this.state.gastos.forEach((item, index) => {
+        total += parseInt(item.valor);
+      });
+      
+      this.setState({total: total});
     });
   }
 
@@ -67,14 +74,17 @@ class Obra extends React.Component {
     axios.delete("http://localhost:3001/api/obra/" + "1" + "/gasto/" + i ).then(
       res => {
         this.setState({ gastos: this.state.gastos.filter(gasto => gasto.id !== i)});
+        this.componentDidMount();
       }
-    )
+    );
+
+
   }
 
   render(){
     const { classes } = this.props;
     return (
-      <>        
+      <div>        
         <Title>Detalles de la obra</Title>
         <Table size="small">
           <TableHead>
@@ -92,7 +102,7 @@ class Obra extends React.Component {
                 <TableCell>{obra.fecha.split("T")[0]}</TableCell>
                 <TableCell><Link href={"/Obra/" + obra.id}>{obra.nombre}</Link></TableCell>
                 <TableCell>{obra.ubicacion}</TableCell>
-                <TableCell align="right"></TableCell>
+                <TableCell align="right">{total}</TableCell>
               </TableRow>
             ))}
             
@@ -140,7 +150,7 @@ class Obra extends React.Component {
         <br></br>
         <br></br>
 
-      </>
+      </div>
     );
   }
 }
