@@ -21,10 +21,8 @@ const useStyles = theme => ({
   },
 });
 
-var id = 0;
-var total = 0;
 
-class Obra extends React.Component {
+class Crear extends React.Component {
 
   constructor(props) {
     super(props);
@@ -63,6 +61,6 @@ class Obra extends React.Component {
   }
 }
 
-export default withRouter(withStyles(useStyles)(Obra));
+export default withRouter(withStyles(useStyles)(Crear));
 
 //export default withRouter(Obra);
