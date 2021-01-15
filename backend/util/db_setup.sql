@@ -24,7 +24,7 @@ CREATE TABLE gastos(
     nombre VARCHAR(60) NOT NULL,
     fecha DATE DEFAULT CURRENT_DATE,
     valor INT,
-    obra BIGSERIAL NOT NULL references obras(id)
+    obra BIGSERIAL NOT NULL references obras(id) ON DELETE CASCADE
 );
 
 INSERT INTO obras(nombre, ubicacion) values ('Obra de prueba', 'Valdivia');
