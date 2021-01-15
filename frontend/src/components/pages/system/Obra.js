@@ -152,6 +152,8 @@ class Obra extends React.Component {
         <Button variant="contained" color="primary" onClick={this.sendgastos}>
           Añadir gasto
         </Button>
+        <span>&nbsp;&nbsp;</span>
+        <Button variant="contained" href="/Dashboard">Volver al Dashboard</Button>
         <br></br>
         <br></br>
         <Button variant="contained" color="secondary" href="/Dashboard" onClick={() => {this.eliminarobra(id)}}>

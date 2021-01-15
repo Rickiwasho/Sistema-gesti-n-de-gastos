@@ -50,11 +50,8 @@ class Crear extends React.Component {
         <Button variant="contained" color="primary" href="/Dashboard" onClick={this.sendobra}>
           Añadir Obra
         </Button>
-        <br></br>
-        <br></br>
-        <Button variant="contained" color="primary" href="/Dashboard">
-          Volver al Dashboard
-        </Button>
+        <span>&nbsp;&nbsp;</span>
+        <Button variant="contained" href="/Dashboard">Volver al Dashboard</Button>
         <br></br>
       </div>
     );
