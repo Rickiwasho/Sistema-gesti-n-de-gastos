@@ -30,6 +30,7 @@ class Obra extends React.Component {
     super(props);
     this.sendgastos = this.sendgastos.bind(this);
     this.deletegasto = this.deletegasto.bind(this);
+    this.eliminarobra = this.eliminarobra.bind(this)
   }
 
   state = {
@@ -77,8 +78,13 @@ class Obra extends React.Component {
         this.componentDidMount();
       }
     );
+  }
 
-
+  eliminarobra(i){
+    console.log("deleting obra" + i);
+    axios.delete("http://localhost:3001/api/obra/" + i ).then(
+      res => {console.log(res);}
+    );
   }
 
   render(){
@@ -148,8 +154,10 @@ class Obra extends React.Component {
         </Button>
         <br></br>
         <br></br>
+        <Button variant="contained" color="secondary" href="/Dashboard" onClick={this.eliminarobra(id)}>
+          Eliminar obra
+        </Button>
         <br></br>
-
       </div>
     );
   }
