@@ -84,7 +84,7 @@ class Obra extends React.Component {
   render(){
     const { classes } = this.props;
     return (
-      <div>        
+      <div style={{'margin': '3em'}}>        
         <Title>Detalles de la obra</Title>
         <Table size="small">
           <TableHead>
