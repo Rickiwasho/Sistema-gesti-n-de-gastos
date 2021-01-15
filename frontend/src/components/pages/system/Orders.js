@@ -43,7 +43,6 @@ class Orders extends React.Component {
               <TableCell>Fecha inicio</TableCell>
               <TableCell>Nombre</TableCell>
               <TableCell>Ubicación</TableCell>
-              <TableCell align="right">Gastos totales</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -53,7 +52,6 @@ class Orders extends React.Component {
                 <TableCell>{obra.fecha.split("T")[0]}</TableCell>
                 <TableCell><Link href={"/Obra/" + obra.id}>{obra.nombre}</Link></TableCell>
                 <TableCell>{obra.ubicacion}</TableCell>
-                <TableCell align="right">(valor)</TableCell>
               </TableRow>
             ))}
             
