@@ -9,7 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Title from './Title';
-import axios from 'axios';
+import Api from './Api';
 
 import { withRouter} from 'react-router-dom';
 
@@ -30,7 +30,7 @@ class Crear extends React.Component {
   }
 
   sendobra(){
-    axios.post("http://localhost:3001/api/obra/", {
+    Api.post("/obra/", {
       "nombre": document.getElementById("nombre").value,
       "ubicacion": document.getElementById("ubicacion").value
     });

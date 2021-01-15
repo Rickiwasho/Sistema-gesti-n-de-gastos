@@ -7,10 +7,11 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
-import axios from 'axios';
 import Button from '@material-ui/core/Button';
 
 import { render } from '@testing-library/react';
+
+import Api from './Api';
 
 const useStyles = theme => ({
   seeMore: {
@@ -25,7 +26,7 @@ class Orders extends React.Component {
   };
 
   componentDidMount(){
-    axios.get("http://localhost:3001/api/obra").then(res => {
+    Api.get("/obra").then(res => {
       console.log(res);
       this.setState({ obras: res.data.obras});
     })
