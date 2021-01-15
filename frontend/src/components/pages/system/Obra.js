@@ -22,6 +22,7 @@ const useStyles = theme => ({
 });
 
 var id = 0;
+var total = 0;
 
 class Obra extends React.Component {
 
@@ -57,6 +58,8 @@ class Obra extends React.Component {
         this.componentDidMount();
       }
     );
+    document.getElementById("nombre").value = "";
+    document.getElementById("valor").value = "";
   }
 
   deletegasto(i){
@@ -89,7 +92,7 @@ class Obra extends React.Component {
                 <TableCell>{obra.fecha.split("T")[0]}</TableCell>
                 <TableCell><Link href={"/Obra/" + obra.id}>{obra.nombre}</Link></TableCell>
                 <TableCell>{obra.ubicacion}</TableCell>
-                <TableCell align="right">(valor)</TableCell>
+                <TableCell align="right"></TableCell>
               </TableRow>
             ))}
             
@@ -115,7 +118,7 @@ class Obra extends React.Component {
                 <TableCell>{gasto.fecha.split("T")[0]}</TableCell>
                 <TableCell>{gasto.nombre}</TableCell>
                 <TableCell>{gasto.valor}</TableCell>
-                <TableCell><span onClick={() => {this.deletegasto(gasto.id)}}>❌</span></TableCell>
+                <TableCell><span style={{"cursor":"pointer"}} onClick={() => {this.deletegasto(gasto.id)}}>❌</span></TableCell>
               </TableRow>
             ))}
             
