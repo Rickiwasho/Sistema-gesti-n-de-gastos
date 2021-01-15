@@ -60,7 +60,8 @@ class Obra extends React.Component {
   sendgastos(){
     axios.post("http://localhost:3001/api/obra/" + id + "/gasto", {
       "nombre": document.getElementById("nombre").value,
-      "valor": document.getElementById("valor").value
+      "valor": document.getElementById("valor").value,
+      "proveedor": document.getElementById("proveedor").value
     }).then(
       res => {
         this.componentDidMount();
@@ -68,6 +69,7 @@ class Obra extends React.Component {
     );
     document.getElementById("nombre").value = "";
     document.getElementById("valor").value = "";
+    document.getElementById("proveedor").value = "";
   }
 
   deletegasto(i){
@@ -125,6 +127,7 @@ class Obra extends React.Component {
               <TableCell>Fecha</TableCell>
               <TableCell>Nombre</TableCell>
               <TableCell>Valor</TableCell>
+              <TableCell>Proveedor</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -134,6 +137,7 @@ class Obra extends React.Component {
                 <TableCell>{gasto.fecha.split("T")[0]}</TableCell>
                 <TableCell>{gasto.nombre}</TableCell>
                 <TableCell>{gasto.valor}</TableCell>
+                <TableCell>{gasto.proveedor}</TableCell>
                 <TableCell><span style={{"cursor":"pointer"}} onClick={() => {this.deletegasto(gasto.id)}}>❌</span></TableCell>
               </TableRow>
             ))}
@@ -147,6 +151,7 @@ class Obra extends React.Component {
       <form className={classes.root} noValidate autoComplete="off">
         <TextField id="nombre" label="Nombre" />
         <TextField id="valor" label="Valor" />
+        <TextField id="proveedor" label="Proveedor" />
       </form>
       <br></br>
         <Button variant="contained" color="primary" onClick={this.sendgastos}>

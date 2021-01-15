@@ -22,6 +22,7 @@ CREATE TABLE obras(
 CREATE TABLE gastos(
     id BIGSERIAL NOT NULL,
     nombre VARCHAR(60) NOT NULL,
+    proveedor VARCHAR(60) NOT NULL,
     fecha DATE DEFAULT CURRENT_DATE,
     valor INT,
     obra BIGSERIAL NOT NULL references obras(id) ON DELETE CASCADE
