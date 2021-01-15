@@ -1,6 +1,6 @@
 # Template para desarrollo
 
-PORT=3000
+PORT=8017
 
 PGUSER=postgres
 PGHOST=localhost
