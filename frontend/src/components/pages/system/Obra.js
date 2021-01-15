@@ -154,7 +154,7 @@ class Obra extends React.Component {
         </Button>
         <br></br>
         <br></br>
-        <Button variant="contained" color="secondary" href="/Dashboard" onClick={this.eliminarobra(id)}>
+        <Button variant="contained" color="secondary" href="/Dashboard" onClick={() => {this.eliminarobra(id)}}>
           Eliminar obra
         </Button>
         <br></br>
