@@ -44,8 +44,10 @@ class Latest extends React.Component {
         <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell>Fecha inicio</TableCell>
-              <TableCell>Nombre</TableCell>
+              <TableCell>Fecha compra</TableCell>
+              <TableCell>Item</TableCell>
+              <TableCell>Obra</TableCell>
+              <TableCell>Proveedor</TableCell>
               <TableCell>Precio</TableCell>
             </TableRow>
           </TableHead>
@@ -55,6 +57,8 @@ class Latest extends React.Component {
               <TableRow key={gasto.id}>
                 <TableCell>{gasto.fecha.split("T")[0]}</TableCell>
                 <TableCell><Link href={"/obra/" + gasto.obra}>{gasto.nombre}</Link></TableCell>
+                <TableCell><Link href={"/obra/" + gasto.obra}>{this.state.obras.find(x => x.id == gasto.obra).nombre}</Link></TableCell>
+                <TableCell>{gasto.proveedor}</TableCell>
                 <TableCell>$ {gasto.valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</TableCell>
               </TableRow>
             ))}
