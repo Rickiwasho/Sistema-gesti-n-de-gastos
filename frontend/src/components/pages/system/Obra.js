@@ -40,11 +40,11 @@ class Obra extends React.Component {
 
   componentDidMount(){
     id = this.props.match.params.id;
-    axios.get("http://localhost:3001/api/obra/" + this.props.match.params.id).then(res => {
+    axios.get("http://localhost:4000/api/obra/" + this.props.match.params.id).then(res => {
       console.log(res);
       this.setState({ obras: res.data.obras});
     });
-    axios.get("http://localhost:3001/api/obra/" + this.props.match.params.id + "/gasto").then(res => {
+    axios.get("http://localhost:4000/api/obra/" + this.props.match.params.id + "/gasto").then(res => {
       console.log(res);
       this.setState({ gastos: res.data.gastos});
       
@@ -58,7 +58,7 @@ class Obra extends React.Component {
   }
 
   sendgastos(){
-    axios.post("http://localhost:3001/api/obra/" + id + "/gasto", {
+    axios.post("http://localhost:4000/api/obra/" + id + "/gasto", {
       "nombre": document.getElementById("nombre").value,
       "valor": document.getElementById("valor").value,
       "proveedor": document.getElementById("proveedor").value
@@ -74,7 +74,7 @@ class Obra extends React.Component {
 
   deletegasto(i){
     console.log("deleting gasto " + i);
-    axios.delete("http://localhost:3001/api/obra/" + "1" + "/gasto/" + i ).then(
+    axios.delete("http://localhost:4000/api/obra/" + "1" + "/gasto/" + i ).then(
       res => {
         this.setState({ gastos: this.state.gastos.filter(gasto => gasto.id !== i)});
         this.componentDidMount();
@@ -84,7 +84,7 @@ class Obra extends React.Component {
 
   eliminarobra(i){
     console.log("deleting obra" + i);
-    axios.delete("http://localhost:3001/api/obra/" + i ).then(
+    axios.delete("http://localhost:4000/api/obra/" + i ).then(
       res => {console.log(res);}
     );
   }

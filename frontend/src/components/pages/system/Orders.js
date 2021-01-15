@@ -25,7 +25,7 @@ class Orders extends React.Component {
   };
 
   componentDidMount(){
-    axios.get("http://localhost:3001/api/obra").then(res => {
+    axios.get("http://localhost:3000/api/obra").then(res => {
       console.log(res);
       this.setState({ obras: res.data.obras});
     })

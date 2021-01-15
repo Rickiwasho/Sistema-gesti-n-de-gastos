@@ -30,7 +30,7 @@ class Crear extends React.Component {
   }
 
   sendobra(){
-    axios.post("http://localhost:3001/api/obra/", {
+    axios.post("http://localhost:3000/api/obra/", {
       "nombre": document.getElementById("nombre").value,
       "ubicacion": document.getElementById("ubicacion").value
     });
