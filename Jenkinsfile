@@ -62,7 +62,7 @@ pipeline{
 
                 sh 'docker stop sggastos-backend || true'
                 sh 'docker rm sggastos-backend || true'
-                sh 'docker run -dit --name sggastos-backend -p 8017:3000 node'
+                sh 'docker run -dit --name sggastos-backend -p 8017:8017 node'
                 sh 'docker exec sggastos-backend git clone https://github.com/rickiwasho/sggastos'
                 sh 'docker exec -w /sggastos/backend sggastos-backend cp util/dotenv_template .env'
 

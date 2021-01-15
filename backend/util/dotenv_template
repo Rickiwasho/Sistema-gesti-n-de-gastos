@@ -1,7 +1,7 @@
 # Copiar este archivo a .env y cambiar
 # los valores según sea necesario.
 
-PORT=3000
+PORT=8017
 
 PGUSER=postgres
 PGHOST=sggastos_db
