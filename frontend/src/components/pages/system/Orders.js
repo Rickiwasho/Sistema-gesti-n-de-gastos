@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 import { render } from '@testing-library/react';
 
@@ -59,9 +60,9 @@ class Orders extends React.Component {
           
         </Table>
         <div className={classes.seeMore}>
-          <Link color="primary" href="#" onClick={preventDefault}>
-            Ver más obras...
-          </Link>
+          <Button variant="contained" color="primary" href="/Crear">
+            Añadir Obra
+          </Button>
         </div>
           
       </React.Fragment>
