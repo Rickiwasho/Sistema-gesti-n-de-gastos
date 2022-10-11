@@ -1,0 +1,32 @@
+# deploy del frontend:
+
+docker run -it -p 3016:3000 --entrypoint=/bin/sh node:14-alpine
+
+apk add git
+
+git clone https://github.com/rickiwasho/sggastos
+
+cd sggastos/frontend
+
+npm install
+
+npm start
+
+# acceder al sitio desde localhost:3016
+
+---------------------------------------------------
+
+# Deploy de la db
+
+docker run --name sggastos_db -e POSTGRES_PASSWORD=mipassword -p 8018:5432 -d postgres:alpine
+
+docker exec sggastos_db wget https://diegosandoval.net/random/sggastos.sql
+
+docker exec sggastos_db psql -U postgres -a -f sggastos.sql
+
+# ... por completar
+
+
+
+
+
